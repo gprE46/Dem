@@ -1,0 +1,21 @@
+schema_version = "1.0.0"
+
+id = "blender_drop"
+version = "1.0.0"
+name = "Blender Drop"
+tagline = "Send assets from your phone into Blender over local Wi-Fi"
+maintainer = "Blender Drop contributors"
+type = "add-on"
+
+tags = ["Import-Export"]
+
+blender_version_min = "4.2.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+
+[permissions]
+network = "Runs a local Wi-Fi server to receive files from your phone"
+files = "Saves received files and imports them into the scene"
+
+[build]
+paths_exclude_pattern = ["__pycache__/", "*.pyc", ".*"]

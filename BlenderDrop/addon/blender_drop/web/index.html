@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Blender Drop">
+  <meta name="format-detection" content="telephone=no">
+  <title>Blender Drop</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 2.5c-.4 0-.8.2-1 .5L6.2 10a6.5 6.5 0 1 0 11.6 0L13 3a1.2 1.2 0 0 0-1-.5z" fill="currentColor"/></svg>
+      </div>
+      <h1>BLENDER DROP</h1>
+      <p class="subtitle" data-i18n="subtitle">Send assets to Blender</p>
+    </header>
+
+    <section id="connection" class="connection is-connecting" role="status" aria-live="polite">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="connText" data-i18n="connecting">Connecting…</span>
+      <span id="connInfo" class="conn-info"></span>
+    </section>
+
+    <label id="picker" class="picker">
+      <input id="fileInput" type="file" multiple>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 16V4m0 0-5 5m5-5 5 5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-i18n="select">Select File</span>
+    </label>
+    <p class="hint" id="hint" data-i18n="hint">GLB, FBX, OBJ, USD, STL, SVG, images, .blend or .zip</p>
+
+    <section id="current" class="card hidden" aria-live="polite">
+      <div class="card-top">
+        <span id="curName" class="cur-name"></span>
+        <span id="curCount" class="cur-count"></span>
+      </div>
+      <div class="bar"><div id="curFill" class="fill"></div></div>
+      <div id="curState" class="cur-state"></div>
+      <div id="curMessage" class="cur-message"></div>
+    </section>
+
+    <section class="recent">
+      <h2 data-i18n="recent">Recent uploads</h2>
+      <ul id="recentList" class="recent-list">
+        <li class="empty" data-i18n="empty">Nothing sent yet</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p data-i18n="footer">Keep this page open and the screen on until the upload finishes.</p>
+    </footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
